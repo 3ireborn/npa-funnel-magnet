@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nganggur Preneur Akademi - Markas Utama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #061b18; color: white; }
+        .font-m { font-family: 'Montserrat', sans-serif; }
+        .bg-gold { background-color: #d4af37; }
+        .text-gold { color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        /* Animasi Gradient Background */
+        .bg-animated { background: linear-gradient(-45deg, #061b18, #0a2e28, #061b18, #103d35); background-size: 400% 400%; animation: gradientBG 10s ease infinite; }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    </style>
+</head>
+<body class="bg-animated min-h-screen flex flex-col items-center p-5 pt-10 pb-20">
+    
+    <div class="max-w-md w-full space-y-8 text-center">
+        
+        <!-- HEADER PROFILE -->
+        <div class="space-y-4">
+            <div class="inline-block relative">
+                <!-- Ganti link gambar di bawah dengan foto Pakde jika mau -->
+                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nganggur Preneur" class="w-32 h-32 rounded-full object-cover border-4 border-[#d4af37] mx-auto shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-[#d4af37] text-[#061b18] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap shadow-lg">
+                    CEO NPA
+                </div>
+            </div>
+            
+            <h1 class="text-3xl font-black text-white font-m uppercase tracking-wider">Sugiarto Kurniawan</h1>
+            <p class="text-sm font-bold text-[#d4af37] tracking-widest">#NganggurAjaBisa</p>
+        </div>
+
+        <!-- QUOTE SAKTI -->
+        <div class="bg-[#102d28]/80 backdrop-blur-sm p-6 rounded-2xl border border-[#d4af37]/30 shadow-xl space-y-4">
+            <p class="text-sm text-gray-200 italic leading-relaxed font-light">
+                "Dibilang orangnya nganggur, tapi kok punya penghasilan.<br>Dibilang kerja, kok cuma nongkrong di rumah aja."
+            </p>
+            <div class="h-px w-1/2 bg-[#d4af37]/50 mx-auto"></div>
+            <p class="text-sm font-bold text-white leading-relaxed">
+                Semuanya akan nganggur pada waktunya.<br>
+                <span class="text-[#d4af37]">Yang jadi masalah, nganggur habisin duit atau malah nambah aset?</span>
+            </p>
+        </div>
+
+        <div class="space-y-2">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Pilih Panduan Sesuai Profesi Anda:</h2>
+            
+            <!-- TOMBOL KAMAR 1: KARYAWAN -->
+            <a href="karyawan.html" class="flex items-center justify-between bg-[#0a1f1b] hover:bg-[#102d28] border border-gray-600 hover:border-[#d4af37] p-4 rounded-xl transition group shadow-md">
+                <div class="flex items-center gap-4">
+                    <div class="text-2xl">💼</div>
+                    <div class="text-left">
+                        <h3 class="text-sm font-bold text-white group-hover:text-[#d4af37] transition">Karyawan Kantoran</h3>
+                        <p class="text-[10px] text-gray-400">Strategi Resign Cerdas & Aman</p>
+                    </div>
+                </div>
+                <div class="text-gray-500 group-hover:text-[#d4af37]">➔</div>
+            </a>
+
+            <!-- TOMBOL KAMAR 2: PEDAGANG/PEKERJA Keras -->
+            <a href="pedagang.html" class="flex items-center justify-between bg-[#0a1f1b] hover:bg-[#102d28] border border-gray-600 hover:border-[#d4af37] p-4 rounded-xl transition group shadow-md">
+                <div class="flex items-center gap-4">
+                    <div class="text-2xl">💪</div>
+                    <div class="text-left">
+                        <h3 class="text-sm font-bold text-white group-hover:text-[#d4af37] transition">Pekerja Lapangan / UMKM</h3>
+                        <p class="text-[10px] text-gray-400">Kerja Cerdas Tanpa Lelah Fisik</p>
+                    </div>
+                </div>
+                <div class="text-gray-500 group-hover:text-[#d4af37]">➔</div>
+            </a>
+
+            <!-- TOMBOL KAMAR 3: ASN / TNI POLRI -->
+            <a href="pns.html" class="flex items-center justify-between bg-[#0a1f1b] hover:bg-[#102d28] border border-gray-600 hover:border-[#d4af37] p-4 rounded-xl transition group shadow-md">
+                <div class="flex items-center gap-4">
+                    <div class="text-2xl">🏛️</div>
+                    <div class="text-left">
+                        <h3 class="text-sm font-bold text-white group-hover:text-[#d4af37] transition">ASN, BUMN & Aparat</h3>
+                        <p class="text-[10px] text-gray-400">Bangun Aset Tanpa Ganggu Jam Dinas</p>
+                    </div>
+                </div>
+                <div class="text-gray-500 group-hover:text-[#d4af37]">➔</div>
+            </a>
+
+            <!-- TOMBOL KAMAR 4: PENGUSAHA -->
+            <a href="pengusaha.html" class="flex items-center justify-between bg-[#0a1f1b] hover:bg-[#102d28] border border-gray-600 hover:border-[#d4af37] p-4 rounded-xl transition group shadow-md">
+                <div class="flex items-center gap-4">
+                    <div class="text-2xl">🏬</div>
+                    <div class="text-left">
+                        <h3 class="text-sm font-bold text-white group-hover:text-[#d4af37] transition">Pengusaha Konvensional</h3>
+                        <p class="text-[10px] text-gray-400">Bisnis Auto-Pilot Tanpa Pusing Karyawan</p>
+                    </div>
+                </div>
+                <div class="text-gray-500 group-hover:text-[#d4af37]">➔</div>
+            </a>
+
+            <!-- TOMBOL KAMAR 5: MAHASISWA -->
+            <a href="mahasiswa.html" class="flex items-center justify-between bg-[#0a1f1b] hover:bg-[#102d28] border border-gray-600 hover:border-[#d4af37] p-4 rounded-xl transition group shadow-md">
+                <div class="flex items-center gap-4">
+                    <div class="text-2xl">🎓</div>
+                    <div class="text-left">
+                        <h3 class="text-sm font-bold text-white group-hover:text-[#d4af37] transition">Mahasiswa & Gen-Z</h3>
+                        <p class="text-[10px] text-gray-400">Lulus Kuliah Langsung Punya Aset</p>
+                    </div>
+                </div>
+                <div class="text-gray-500 group-hover:text-[#d4af37]">➔</div>
+            </a>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="pt-8 text-center border-t border-gray-800">
+            <p class="text-xs text-gray-500 font-semibold tracking-widest uppercase">Didukung Oleh</p>
+            <h3 class="text-lg font-black text-white font-m mt-2">Ekosistem 3iReborn</h3>
+            <p class="text-[10px] text-gray-500 mt-1">Mengubah Paradigma, Mencetak Bukti Nyata.</p>
+        </div>
+
+    </div>
+</body>
+</html>
