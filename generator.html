@@ -26,8 +26,9 @@
             </div>
 
             <div>
-                <label class="block text-xs font-bold uppercase mb-1">Nomor WA (Awali Kode Negara: 62 / 886)</label>
-                <input type="number" id="nomor-wa" class="w-full border-3 border-black p-3 font-bold outline-none focus:bg-cyan-50" placeholder="Contoh: 886917282849">
+                <!-- REVISI TULISAN DI SINI -->
+                <label class="block text-xs font-bold uppercase mb-1">Nomor WA (Awali dengan Kode Negara, Tanpa '+')</label>
+                <input type="number" id="nomor-wa" class="w-full border-3 border-black p-3 font-bold outline-none focus:bg-cyan-50" placeholder="Contoh: 886917282849 atau 628123456">
             </div>
 
             <button onclick="buatLink()" class="w-full bg-[#facc15] brutal-btn py-4 font-black uppercase tracking-widest mt-4">🚀 GENERATE SEMUA LINK</button>
@@ -37,7 +38,8 @@
             <h2 class="font-black text-center bg-black text-white py-2 uppercase italic">Siap Kirim ke Mitra! 🔥</h2>
             
             <div id="list-link" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                </div>
+                <!-- Hasil generate akan muncul di sini -->
+            </div>
         </div>
     </div>
 
@@ -51,7 +53,6 @@
                 return;
             }
 
-            // Fitur pengaman: mengubah spasi menjadi %20 agar link tidak patah
             const namaAman = encodeURIComponent(namaInput);
             const baseUrl = "https://3ireborn.github.io/npa-funnel-magnet/";
             
