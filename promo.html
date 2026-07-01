@@ -16,19 +16,18 @@
 
     <div class="max-w-md w-full space-y-8 text-center">
 
-        <!-- HEADER GAMBAR NPA ACADEMY (GAMBAR 3) -->
-        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-400 relative">
-            <!-- Pastikan nama file gambar ini persis sama dengan yang Pakde upload -->
-            <img src="npa-header.png" alt="NPA Academy" class="w-full h-auto object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        </div>
-
-        <!-- HEADER BANNER TEKS PROVOKATIF -->
-        <div class="bg-red-600 text-white p-4 rounded-2xl shadow-xl border-4 border-yellow-400 transform -rotate-1 -mt-4 relative z-10">
+        <!-- HEADER BANNER TEKS PROVOKATIF (HOOK DI ATAS) -->
+        <div class="bg-red-600 text-white p-4 rounded-2xl shadow-xl border-4 border-yellow-400 transform -rotate-1 relative z-10">
             <p class="text-xs font-bold uppercase tracking-widest text-yellow-300 mb-1">Peringatan Keras!</p>
             <h1 class="text-2xl sm:text-3xl font-black font-m leading-tight text-shadow">
                 Masih Prospekting Manual di Tahun Ini? <span class="text-yellow-300">Anda Sedang Bunuh Diri Perlahan!</span>
             </h1>
+        </div>
+
+        <!-- HEADER GAMBAR NPA ACADEMY (PINDAH KE BAWAH HOOK) -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-400 relative -mt-4">
+            <img src="npa-header.png" alt="NPA Academy" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
         <!-- PAIN POINTS -->
