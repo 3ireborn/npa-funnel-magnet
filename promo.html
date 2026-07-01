@@ -12,12 +12,19 @@
         .text-shadow { text-shadow: 2px 2px 0px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-4 pt-10 pb-20">
+<body class="min-h-screen flex flex-col items-center p-4 pt-6 pb-20">
 
     <div class="max-w-md w-full space-y-8 text-center">
 
-        <!-- HEADER BANNER -->
-        <div class="bg-red-600 text-white p-4 rounded-2xl shadow-xl border-4 border-yellow-400 transform -rotate-1">
+        <!-- HEADER GAMBAR NPA ACADEMY (GAMBAR 3) -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-400 relative">
+            <!-- Pastikan nama file gambar ini persis sama dengan yang Pakde upload -->
+            <img src="npa-header.png" alt="NPA Academy" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        </div>
+
+        <!-- HEADER BANNER TEKS PROVOKATIF -->
+        <div class="bg-red-600 text-white p-4 rounded-2xl shadow-xl border-4 border-yellow-400 transform -rotate-1 -mt-4 relative z-10">
             <p class="text-xs font-bold uppercase tracking-widest text-yellow-300 mb-1">Peringatan Keras!</p>
             <h1 class="text-2xl sm:text-3xl font-black font-m leading-tight text-shadow">
                 Masih Prospekting Manual di Tahun Ini? <span class="text-yellow-300">Anda Sedang Bunuh Diri Perlahan!</span>
@@ -25,7 +32,7 @@
         </div>
 
         <!-- PAIN POINTS -->
-        <div class="text-left space-y-4 px-2">
+        <div class="text-left space-y-4 px-2 pt-2">
             <p class="text-sm font-bold text-gray-800">
                 Sadar atau tidak, prospek Anda tiap hari direbut oleh kompetitor yang kerjanya jauh lebih cerdas menggunakan Sistem Digital.
             </p>
@@ -56,14 +63,14 @@
             <div class="bg-yellow-400 p-5 rounded-2xl border-4 border-red-600 text-left shadow-lg transform rotate-1">
                 <p class="text-sm font-black text-red-700 uppercase mb-3 text-center border-b-2 border-red-600 pb-2">Anda Akan Mendapatkan 8 Senjata Ini:</p>
                 <div class="grid grid-cols-2 gap-2 text-xs font-bold text-gray-900">
-                    <div class="bg-white p-2 rounded border border-yellow-500">1. Web Biaya Sekolah</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">2. Web Emak-emak</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">3. Web Pejuang Devisa</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">4. Web Karyawan</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">5. Web Mahasiswa</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">6. Web Pedagang</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">7. Web Pengusaha</div>
-                    <div class="bg-white p-2 rounded border border-yellow-500">8. Web ASN / PNS</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">1. Web Biaya Sekolah</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">2. Web Emak-emak</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">3. Web Pejuang Devisa</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">4. Web Karyawan</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">5. Web Mahasiswa</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">6. Web Pedagang</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">7. Web Pengusaha</div>
+                    <div class="bg-white p-2 rounded border border-yellow-500 shadow-sm">8. Web ASN / PNS</div>
                 </div>
                 <p class="text-xs text-center mt-3 font-bold text-red-700">*Semua link akan terkunci paten ke nomor WhatsApp Anda! Calon mitra klik = langsung masuk WA Anda.*</p>
             </div>
@@ -71,18 +78,19 @@
 
         <!-- OFFERING SECTION -->
         <div class="border-4 border-gray-200 p-6 rounded-3xl bg-white shadow-xl relative mt-10">
-            <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-red-600 text-white font-black px-6 py-2 rounded-full uppercase tracking-wider text-sm border-2 border-white shadow-md">
+            <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-red-600 text-white font-black px-6 py-2 rounded-full uppercase tracking-wider text-sm border-2 border-white shadow-md w-11/12">
                 Pilih Penawaran Anda
             </div>
 
             <div class="space-y-6 pt-4">
                 
                 <!-- OPSI 1: JOIN MITRA NPA -->
-                <div class="bg-red-50 p-4 rounded-xl border border-red-200">
-                    <p class="font-black text-red-600 text-lg mb-1">OPSI 1: MAU GRATIS?</p>
-                    <p class="text-xs text-gray-700 mb-3">Jadilah bagian dari keluarga besar **Nganggur Preneur Akademi**. Gabung bisnisnya di tim kami, dan semua 8 fasilitas web canggih ini jadi milik Anda 100% GRATIS!</p>
+                <div class="bg-red-50 p-4 rounded-xl border border-red-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-600 text-white text-[9px] font-bold px-2 py-1 rounded-bl-lg">REKOMENDASI</div>
+                    <p class="font-black text-red-600 text-lg mb-1 mt-2">OPSI 1: MAU GRATIS?</p>
+                    <p class="text-xs text-gray-700 mb-3">Jadilah bagian dari keluarga besar **Nganggur Preneur Akademi (NPA)**. Gabung bisnisnya di tim kami, dan semua 8 fasilitas web canggih ini jadi milik Anda 100% GRATIS!</p>
                     <a href="https://wa.me/6285218453131?text=Halo%20Pakde,%20saya%20tertarik%20GABUNG%20mitra%20di%20tim%20NganggurPreneur%20agar%20dapat%20fasilitas%208%20Web%20GRATIS." class="block w-full bg-red-600 text-white font-bold py-3 rounded-lg text-sm shadow-md hover:bg-red-700 transition">
-                        👉 DAFTAR MITRA SEKARANG
+                        👉 DAFTAR MITRA NPA SEKARANG
                     </a>
                 </div>
 
@@ -105,7 +113,7 @@
 
                     <p class="text-xs text-gray-600 font-bold mb-4 italic text-center">Sekali bayar seumur hidup, tanpa biaya sewa tahunan!</p>
                     
-                    <a href="https://wa.me/6285218453131?text=Halo%20Pakde,%20saya%20dari%20tim%20lain.%20Saya%20mau%20AMBIL%20PROMO%20Rp%2099.000%20untuk%208%20Web%20Kolam%20Prospek." class="block w-full bg-yellow-400 text-red-800 font-black py-3 rounded-lg text-sm shadow-[0_4px_0_rgb(180,83,9)] hover:translate-y-1 hover:shadow-none transition uppercase">
+                    <a href="https://wa.me/6285218453131?text=Halo%20Pakde,%20saya%20dari%20tim%20lain.%20Saya%20mau%20AMBIL%20PROMO%20Rp%2099.000%20untuk%208%20Web%20Kolam%20Prospek." class="block w-full bg-yellow-400 text-red-900 font-black py-3 rounded-lg text-sm shadow-[0_4px_0_rgb(180,83,9)] hover:translate-y-1 hover:shadow-none transition uppercase">
                         🛒 SAYA MAU BELI SEKARANG!
                     </a>
                 </div>
