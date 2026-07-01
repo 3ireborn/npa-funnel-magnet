@@ -25,7 +25,7 @@
             Pusing Mikirin <span class="text-amber-400">Biaya Sekolah Anak</span> yang Tiap Tahun Makin Gila-gilaan?
         </h1>
 
-        <!-- GAMBAR (Panggil nama file gambar yang sudah Pakde upload ke GitHub) -->
+        <!-- GAMBAR -->
         <div class="rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl relative">
             <img src="biaya-sekolah.jpg" alt="Ibu Pusing Biaya Sekolah" class="w-full h-auto object-cover opacity-90">
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f172a] to-transparent p-4"></div>
@@ -89,11 +89,10 @@
             </div>
         </div>
 
-        <!-- CTA BUTTON (INI YANG DITAMBAHKAN ID) -->
+        <!-- CTA BUTTON -->
         <div class="pt-6 space-y-4">
             <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Amankan Masa Depan Anak Anda!</p>
             
-            <!-- PERHATIKAN: Ada id="tombol-wa" di dalam tag <a> ini -->
             <a id="tombol-wa" href="https://wa.me/6285218453131?text=Halo%20Pakde,%20saya%20tertarik%20konsultasi%20program%20persiapan%20dana%20pendidikan%203iReborn." class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-black py-4 rounded-xl text-center shadow-[0_0_20px_rgba(245,158,11,0.4)] transition uppercase tracking-widest text-sm font-m">
                 🚀 Mulai Siapkan Dana Sekolah
             </a>
@@ -103,20 +102,23 @@
 
     </div>
 
-    <!-- SCRIPT URL PARAMETER UNTUK MITRA (DITANAM DI SINI) -->
+    <!-- SCRIPT URL PARAMETER UNTUK MITRA (UPGRADE CANGGIH) -->
     <script>
-        // Sistem otomatis merubah nomor WA ke nomor Mitra
+        // Sistem membaca link URL
         const urlParams = new URLSearchParams(window.location.search);
         const nomorMitra = urlParams.get('wa');
+        const namaMitra = urlParams.get('name'); // Membaca parameter &name=
 
         if (nomorMitra) {
-            // Mencari tombol yang memiliki ID "tombol-wa"
             const tombol = document.getElementById('tombol-wa');
             
-            // Pesan default yang akan terkirim
-            const pesanTeks = encodeURIComponent("Halo, saya ingin konsultasi tentang program persiapan dana pendidikan anak 3iReborn dari Landing Page.");
+            // Menentukan sapaan otomatis
+            let sapaan = namaMitra ? `Halo ${namaMitra}` : `Halo`;
             
-            // Mengganti href tombol dengan nomor mitra yang ada di link URL
+            // Meracik pesan teks
+            const pesanTeks = encodeURIComponent(`${sapaan}, saya tertarik konsultasi program persiapan dana pendidikan 3iReborn.`);
+            
+            // Mengeksekusi tombol ke nomor dan teks yang baru
             tombol.href = `https://wa.me/${nomorMitra}?text=${pesanTeks}`;
         }
     </script>
