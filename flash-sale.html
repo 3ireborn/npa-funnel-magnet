@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 FLASH SALE 7.7 - NPA SMART SYSTEM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .header-sale {
+        background: #ef4444;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: blink 1s infinite alternate;
+    }
+    @keyframes blink {
+        0% { opacity: 1; }
+        100% { opacity: 0.8; }
+    }
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #1e293b;
+        border-radius: 15px;
+        border: 2px solid #ef4444;
+        box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+    }
+    .price-box {
+        margin: 30px 0;
+    }
+    .coret {
+        text-decoration: line-through;
+        color: #94a3b8;
+        font-size: 20px;
+    }
+    .harga-gila {
+        font-size: 50px;
+        font-weight: 900;
+        color: #fbbf24;
+        margin: 10px 0;
+        text-shadow: 2px 2px 10px rgba(251, 191, 36, 0.5);
+    }
+    .timer-box {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
+    }
+    .time-slot {
+        background: #ef4444;
+        padding: 15px;
+        border-radius: 10px;
+        min-width: 70px;
+    }
+    .time-slot span {
+        display: block;
+        font-size: 30px;
+        font-weight: 900;
+    }
+    .time-slot small {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .btn-buy {
+        display: inline-block;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        color: #000;
+        padding: 15px 40px;
+        font-size: 22px;
+        font-weight: 900;
+        text-decoration: none;
+        border-radius: 50px;
+        margin-top: 20px;
+        box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
+        transition: transform 0.2s;
+    }
+    .btn-buy:hover {
+        transform: scale(1.05);
+    }
+    .tagline {
+        color: #10b981;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="header-sale">
+        🚨 DARURAT FLASH SALE 7.7 🚨
+    </div>
+
+    <div class="container">
+        <h2>ALL-IN-ONE BUNDLE: Edukasi FB Pro + NPA AI Master + Schedule Creator</h2>
+        <p>Buka pintu rezeki dari segala arah dengan senjata digital paling brutal tahun ini!</p>
+        
+        <div class="price-box">
+            <div class="coret">Harga Normal: Rp 499.000</div>
+            <div class="harga-gila">Rp 31.000</div>
+            <p style="color: #fbbf24;">(Angka sakti khusus mitra 3iReborn!)</p>
+        </div>
+
+        <h3>PROMO HANCUR INI BERAKHIR DALAM:</h3>
+        <div class="timer-box">
+            <div class="time-slot"><span id="jam">00</span><small>Jam</small></div>
+            <div class="time-slot"><span id="menit">00</span><small>Menit</small></div>
+            <div class="time-slot"><span id="detik">00</span><small>Detik</small></div>
+        </div>
+
+        <!-- Benefit Eksklusif -->
+        <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 15px; text-align: left; margin: 20px 0; border-radius: 5px;">
+            <p style="color: #10b981; font-weight: bold; margin-top: 0; font-size: 16px;">🎁 SUPER BENEFIT HARI INI:</p>
+            <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 5px;">✔ Akses Master Tools AI & Schedule Creator</p>
+            <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 5px;">✔ GRATIS Konsultasi Khusus Program 3iReborn & Landing Page AI</p>
+            <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 5px;">✔ <strong>Aman Lintas Jaringan!</strong> Tidak ada intervensi pindah jaringan/bisnis. (Diawasi langsung oleh ID: 88541).</p>
+        </div>
+
+        <!-- Tombol Beli WA Pribadi (GANTI 628XXXXXXXXX DENGAN NOMOR WA PAKDE) -->
+        <a href="https://api.whatsapp.com/send?phone=6285218453131&text=Hallo%20PakD%20Sugiarto,%20saya%20mau%20order%20Optimasi%20FB%20PRO%208%20kolam%20Prospek" class="btn-buy" target="_blank">SAYA AMBIL PROMONYA!</a>
+        
+        <p class="tagline">#FromZeroToAllah</p>
+    </div>
+
+    <script>
+        // Set waktu mundur otomatis ke tengah malam ini
+        function updateTimer() {
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+            const diff = endOfDay - now;
+
+            if (diff > 0) {
+                document.getElementById('jam').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
+                document.getElementById('menit').innerText = Math.floor((diff / 1000 / 60) % 60).toString().padStart(2, '0');
+                document.getElementById('detik').innerText = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
+            } else {
+                document.getElementById('jam').innerText = "00";
+                document.getElementById('menit').innerText = "00";
+                document.getElementById('detik').innerText = "00";
+            }
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
