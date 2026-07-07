@@ -126,24 +126,26 @@
             <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 5px;">✔ <strong>Aman Lintas Jaringan!</strong> Tidak ada intervensi pindah jaringan/bisnis. (Diawasi langsung oleh ID: 88541).</p>
         </div>
 
-        <!-- Tombol Beli WA Pribadi (GANTI 628XXXXXXXXX DENGAN NOMOR WA PAKDE) -->
-        <a href="https://api.whatsapp.com/send?phone=6285218453131&text=Hallo%20PakD%20Sugiarto,%20saya%20mau%20order%20Optimasi%20FB%20PRO%208%20kolam%20Prospek" class="btn-buy" target="_blank">SAYA AMBIL PROMONYA!</a>
+        <!-- Tombol Beli WA Pribadi -->
+        <a href="https://api.whatsapp.com/send?phone=628XXXXXXXXX&text=Hallo%20PakD%20Sugiarto,%20saya%20mau%20order%20Optimasi%20FB%20PRO%208%20kolam%20Prospek" class="btn-buy" target="_blank">SAYA AMBIL PROMONYA!</a>
         
         <p class="tagline">#FromZeroToAllah</p>
     </div>
 
     <script>
-        // Set waktu mundur otomatis ke tengah malam ini
+        // Set waktu mundur otomatis ke Jam 20:00 WIB hari ini
         function updateTimer() {
             const now = new Date();
-            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-            const diff = endOfDay - now;
+            // Target waktu diubah menjadi jam 20:00:00 (Jam 8 Malam)
+            const targetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0);
+            const diff = targetTime - now;
 
             if (diff > 0) {
                 document.getElementById('jam').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
                 document.getElementById('menit').innerText = Math.floor((diff / 1000 / 60) % 60).toString().padStart(2, '0');
                 document.getElementById('detik').innerText = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
             } else {
+                // Kalau sudah lewat jam 20:00, timer mentok di angka nol
                 document.getElementById('jam').innerText = "00";
                 document.getElementById('menit').innerText = "00";
                 document.getElementById('detik').innerText = "00";
