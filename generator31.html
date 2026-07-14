@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPA Smart System - Link Builder VVIP</title>
+    <title>NPA Builder VVIP - Final Version</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +16,7 @@
     <div class="max-w-2xl w-full space-y-6">
         <div class="text-center space-y-2 mb-8">
             <h1 class="text-3xl font-black text-amber-400 font-m uppercase tracking-widest">NPA Builder VVIP</h1>
-            <p class="text-sm text-slate-400">Generator 8 Kolam Prospek & Pesan Otomatis</p>
+            <p class="text-sm text-slate-400">Generator & Kirim WA Otomatis</p>
         </div>
 
         <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl space-y-5">
@@ -38,9 +38,10 @@
         <div id="previewBox" class="hidden space-y-4">
             <h2 class="text-lg font-bold text-emerald-400 font-m">Preview Pesan Serah Terima:</h2>
             <textarea id="hasilPesan" rows="18" class="w-full bg-slate-900 border border-emerald-500/50 rounded-xl p-4 text-sm text-slate-200 focus:outline-none leading-relaxed resize-none"></textarea>
-            <button id="btnCopy" onclick="copyPesan()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition flex items-center justify-center gap-2 uppercase tracking-widest text-sm font-m">
-                Salin Pesan Serah Terima
-            </button>
+            
+            <a id="btnKirimWa" href="#" onclick="kirimKeWa()" class="w-full bg-green-500 hover:bg-green-600 text-white font-black py-4 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)] transition flex items-center justify-center gap-2 uppercase tracking-widest text-sm font-m">
+                Kirim Pesan ke WhatsApp Mitra
+            </a>
         </div>
     </div>
 
@@ -98,11 +99,11 @@ Pakd Sugiarto Kurniawan`;
             document.getElementById('previewBox').classList.remove('hidden');
         }
 
-        function copyPesan() {
-            const pesanBox = document.getElementById('hasilPesan');
-            pesanBox.select();
-            navigator.clipboard.writeText(pesanBox.value);
-            alert("Pesan berhasil disalin!");
+        function kirimKeWa() {
+            const wa = document.getElementById('waMitra').value.trim();
+            const pesan = document.getElementById('hasilPesan').value;
+            const linkWa = `https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`;
+            document.getElementById('btnKirimWa').href = linkWa;
         }
     </script>
 </body>
