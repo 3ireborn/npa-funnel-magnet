@@ -83,13 +83,14 @@
 
             <div class="space-y-6 pt-4">
                 
-                <!-- OPSI 1: JOIN MITRA NPA -->
+                <!-- OPSI 1: JOIN MITRA -->
                 <div class="bg-red-50 p-4 rounded-xl border border-red-200 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-red-600 text-white text-[9px] font-bold px-2 py-1 rounded-bl-lg">REKOMENDASI</div>
                     <p class="font-black text-red-600 text-lg mb-1 mt-2">OPSI 1: MAU GRATIS?</p>
                     <p class="text-xs text-gray-700 mb-3">Jadilah bagian dari keluarga besar **Nganggur Preneur Akademi (NPA)**. Gabung bisnisnya di tim kami, dan semua 8 fasilitas web canggih ini jadi milik Anda 100% GRATIS!</p>
-                    <a id="link-opsi-1" href="https://wa.me/6285218453131?text=Halo%20PakD%20Sugiarto,%20saya%20tertarik%20GABUNG%20mitra%20di%20tim%20NganggurPreneur%20agar%20dapat%20fasilitas%208%20Web%20GRATIS." class="block w-full bg-red-600 text-white font-bold py-3 rounded-lg text-sm shadow-md hover:bg-red-700 transition">
-                        👉 DAFTAR MITRA NPA SEKARANG
+                    <!-- Link ini akan otomatis berubah jadi WA Affiliate kalau pakai parameter wa_mitra -->
+                    <a id="link-opsi-1" href="https://wa.me/6285218453131?text=Halo%20PakD%20Sugiarto,%20saya%20tertarik%20GABUNG%20mitra%20di%20tim%20NganggurPreneur%20agar%20dapat%20fasilitas%208%20Web%20GRATIS." class="block w-full bg-red-600 text-white font-bold py-3 rounded-lg text-sm shadow-md hover:bg-red-700 transition text-center">
+                        👉 DAFTAR MITRA SEKARANG
                     </a>
                 </div>
 
@@ -153,30 +154,32 @@
         </svg>
     </a>
 
-    <!-- SCRIPT CERDAS PELACAK KUPON AFFILIATE -->
+    <!-- SCRIPT HYBRID AFFILIATE (OTAK BUATAN) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Ambil parameter '?ref=' dari URL (Contoh: ?ref=YANDI50)
+            // Mengambil parameter dari Link URL
             const urlParams = new URLSearchParams(window.location.search);
-            const kuponRef = urlParams.get('ref');
+            const kuponRef = urlParams.get('kupon');
+            const waMitra = urlParams.get('wa_mitra');
 
-            // Jika ada kode kupon di URL, sistem akan memodifikasi teks tombol WA
+            // Mengambil ID tombol-tombol
+            const link1 = document.getElementById('link-opsi-1');
+            const link2 = document.getElementById('link-opsi-2');
+            const link3 = document.getElementById('link-opsi-3');
+            const linkFloat = document.getElementById('link-floating');
+
+            // LOGIKA 1: Jika ada wa_mitra, OPSI 1 otomatis dialihkan ke WA Affiliate tersebut
+            if (waMitra && link1) {
+                link1.href = `https://wa.me/${waMitra}?text=Halo,%20saya%20tertarik%20GABUNG%20mitra%20di%20tim%20Anda%20agar%20dapat%20fasilitas%208%20Web%20GRATIS.`;
+            }
+
+            // LOGIKA 2: Jika ada kuponRef, tambahkan teks ke WA PakD Sugiarto (Pusat) di Opsi 2, 3, dan Floating
             if (kuponRef) {
-                const link1 = document.getElementById('link-opsi-1');
-                const link2 = document.getElementById('link-opsi-2');
-                const linkFloat = document.getElementById('link-floating');
-
                 const teksTambahan = "%0A%0A(Kode Referensi Affiliate: *" + kuponRef + "*)";
 
-                if (link1) {
-                    link1.href = link1.href + teksTambahan;
-                }
-                if (link2) {
-                    link2.href = link2.href + teksTambahan;
-                }
-                if (linkFloat) {
-                    linkFloat.href = linkFloat.href + teksTambahan;
-                }
+                if (link2) link2.href += teksTambahan;
+                if (link3) link3.href += teksTambahan;
+                if (linkFloat) linkFloat.href += teksTambahan;
             }
         });
     </script>
