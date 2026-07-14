@@ -1,54 +1,109 @@
-<!-- Bagian pesan di dalam script generatorPesan() -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPA Smart System - Link Builder VVIP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
+        .font-m { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-5 pt-10 pb-20">
+
+    <div class="max-w-2xl w-full space-y-6">
+        <div class="text-center space-y-2 mb-8">
+            <h1 class="text-3xl font-black text-amber-400 font-m uppercase tracking-widest">NPA Builder VVIP</h1>
+            <p class="text-sm text-slate-400">Generator 8 Kolam Prospek & Pesan Otomatis</p>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl space-y-5">
+            <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-widest mb-2">Nama Mitra / Prospek</label>
+                <input type="text" id="namaMitra" placeholder="Contoh: Sri Wahyuni" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition">
+            </div>
+            
+            <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-widest mb-2">Nomor WhatsApp</label>
+                <input type="number" id="waMitra" placeholder="Contoh: 6281234567890" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition">
+            </div>
+
+            <button onclick="generatePesan()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-black py-4 rounded-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] transition uppercase tracking-widest text-sm font-m mt-2">
+                🚀 Generate Link & Pesan
+            </button>
+        </div>
+
+        <div id="previewBox" class="hidden space-y-4">
+            <h2 class="text-lg font-bold text-emerald-400 font-m">Preview Pesan Serah Terima:</h2>
+            <textarea id="hasilPesan" rows="18" class="w-full bg-slate-900 border border-emerald-500/50 rounded-xl p-4 text-sm text-slate-200 focus:outline-none leading-relaxed resize-none"></textarea>
+            <button id="btnCopy" onclick="copyPesan()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition flex items-center justify-center gap-2 uppercase tracking-widest text-sm font-m">
+                Salin Pesan Serah Terima
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function generatePesan() {
+            const nama = document.getElementById('namaMitra').value.trim();
+            let wa = document.getElementById('waMitra').value.trim();
+            if(!nama || !wa) { alert('Tolong isi Nama dan Nomor WA dulu ya, Ndan!'); return; }
+            if (wa.startsWith('0')) { wa = '62' + wa.substring(1); } else if (wa.startsWith('+')) { wa = wa.substring(1); }
+
+            const baseUrl = "https://3ireborn.github.io/npa-funnel-magnet/"; 
+            const param = `?wa=${wa}&name=${encodeURIComponent(nama)}`;
+            const links = {
+                sekolah: baseUrl + "biaya-sekolah.html" + param,
+                emak: baseUrl + "emak.html" + param,
+                tkw: baseUrl + "tkw.html" + param,
+                karyawan: baseUrl + "karyawan.html" + param,
+                mahasiswa: baseUrl + "mahasiswa.html" + param,
+                pedagang: baseUrl + "pedagang.html" + param,
+                pengusaha: baseUrl + "pengusaha.html" + param,
+                pns: baseUrl + "pns.html" + param
+            };
+
             const pesan = `Alhamdulillah, Barakallah ${nama}! 🎉
 
-Bukti transferan sudah kami terima dengan aman dan data nomor WA Anda sudah sukses dikunci permanen ke dalam sistem.
+Bukti transferan sudah kami terima dan data WA Anda sudah sukses dikunci ke sistem.
 
-Sesuai janji, ini dia 8 Senjata Tempur Digital (Kolam Prospek Otomatis VVIP) eksklusif atas nama Anda. Silakan simpan dan gunakan link di bawah ini untuk mendatangkan closingan baru:
+Ini dia 8 Senjata Tempur Digital (Kolam Prospek Otomatis VVIP) atas nama Anda:
 
-1️⃣ Kolam Biaya Sekolah:
-${links.sekolah}
-
-2️⃣ Kolam Emak-emak (IRT):
-${links.emak}
-
-3️⃣ Kolam Pejuang Devisa (TKW):
-${links.tkw}
-
-4️⃣ Kolam Karyawan:
-${links.karyawan}
-
-5️⃣ Kolam Mahasiswa:
-${links.mahasiswa}
-
-6️⃣ Kolam Pedagang:
-${links.pedagang}
-
-7️⃣ Kolam Pengusaha:
-${links.pengusaha}
-
-8️⃣ Kolam ASN / PNS:
-${links.pns}
+1️⃣ Biaya Sekolah: ${links.sekolah}
+2️⃣ Emak-emak: ${links.emak}
+3️⃣ TKW: ${links.tkw}
+4️⃣ Karyawan: ${links.karyawan}
+5️⃣ Mahasiswa: ${links.mahasiswa}
+6️⃣ Pedagang: ${links.pedagang}
+7️⃣ Pengusaha: ${links.pengusaha}
+8️⃣ ASN / PNS: ${links.pns}
 
 ---
 
-💡 TIPS CEPAT PANEN CLOSINGAN DARI NPA SMART SYSTEM:
-* Gunakan Sesuai Target: Sebar link sesuai profesi prospek (misal: link TKW untuk grup BMI Taiwan). Tembak tepat sasaran!
-* Pasang di Bio Medsos: Tempelkan link di bio TikTok, profil Facebook Pro, atau status WhatsApp.
-* Biarkan Sistem Bekerja: Tugas Anda cukup sebar link. Biarkan sistem presentasi 24 jam untuk Anda.
-
-Selamat menggunakan alat tempur barunya! Siap-siap HP-nya bergetar penuh chat prospek. 🚀🔥
-
-• Silahkan di cek linknya dan WA Floating nya.
-Dan Promosikan karena kalo bisnis itu harus ada promosi nya, kalau gak ya *Permisi*🤭
+💡 TIPS: Jangan cuma disimpan! Promosikan, kalau gak ya *Permisi*🤭
 
 • MAU DAPAT KOMISI 50RB PER CLOSINGAN?
 Jadilah Pasukan Affiliate NPA Smart System! 
 Cukup buat Link Affiliate unik Anda sendiri di sini: 
 https://3ireborn.github.io/npa-funnel-magnet/generator-affiliate.html
 
-• Dan silahkan join di group WA Pembinaan VVIP: 
+• Join Group WA Pembinaan VVIP: 
 https://chat.whatsapp.com/DUryqZiuZuT4oNMUCXbomf?s=cl&p=a&ilr=0
 
-Salam penuh cinta 💞 dari NPA Smart System 
-_Pakd Sugiarto Kurniawan_
-Mentor 3iReborn`;
+Salam hangat,
+Pakd Sugiarto Kurniawan`;
+
+            document.getElementById('hasilPesan').value = pesan;
+            document.getElementById('previewBox').classList.remove('hidden');
+        }
+
+        function copyPesan() {
+            const pesanBox = document.getElementById('hasilPesan');
+            pesanBox.select();
+            navigator.clipboard.writeText(pesanBox.value);
+            alert("Pesan berhasil disalin!");
+        }
+    </script>
+</body>
+</html>
