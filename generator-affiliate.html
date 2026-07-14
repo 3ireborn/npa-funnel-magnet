@@ -17,66 +17,71 @@
         <p class="text-sm text-slate-300 mb-6">Cetak Link Promosi Anda Sendiri & Dapatkan Komisi Rp 50.000 per Penjualan!</p>
 
         <div class="space-y-4 text-left">
-            <!-- Input Nama / Kupon -->
             <div>
                 <label class="block text-sm font-semibold text-yellow-300 mb-1">1. Nama Anda (Untuk Kode Kupon)</label>
                 <input type="text" id="inputNama" placeholder="Contoh: YANDI" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-600 text-white focus:outline-none focus:border-yellow-400 uppercase" oninput="this.value = this.value.toUpperCase()">
-                <p class="text-[10px] text-slate-400 mt-1">*Gunakan 1 kata saja tanpa spasi (Cth: BUDI, TINI)</p>
+                <p class="text-[10px] text-slate-400 mt-1">*Sistem otomatis akan merapatkan huruf jika Anda menggunakan spasi.</p>
             </div>
 
-            <!-- Input Nomor WA -->
             <div>
                 <label class="block text-sm font-semibold text-yellow-300 mb-1">2. Nomor WhatsApp Anda</label>
                 <input type="number" id="inputWa" placeholder="Contoh: 628123456789" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-600 text-white focus:outline-none focus:border-yellow-400">
                 <p class="text-[10px] text-slate-400 mt-1">*Wajib gunakan 62 di awal, tanpa angka 0, tanda + atau spasi.</p>
             </div>
 
-            <!-- Tombol Generate -->
             <button onclick="generateLink()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3 rounded-lg shadow-lg transform transition hover:scale-105 mt-2">
                 ⚙️ BUAT LINK SAYA SEKARANG
             </button>
         </div>
 
-        <!-- Area Hasil Output Link -->
         <div id="resultArea" class="hidden mt-6 pt-6 border-t border-slate-600">
             <p class="text-sm font-bold text-green-400 mb-2">✅ Link Berhasil Dibuat!</p>
             <textarea id="outputLink" readonly class="w-full h-24 p-3 bg-slate-900 border border-green-500 text-green-300 text-sm rounded-lg mb-3"></textarea>
             
-            <button onclick="copyLink()" class="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 rounded-lg shadow-md transition">
+            <button onclick="copyLink()" class="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-2 rounded-lg shadow-md transition mb-3">
                 📋 COPY LINK PROMOSI
             </button>
+
+            <!-- TOMBOL PREVIEW BARU -->
+            <a id="previewButton" href="#" target="_blank" class="block w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 rounded-lg shadow-md transition text-center">
+                👁️ LIHAT PREVIEW WEB SAYA
+            </a>
         </div>
         
         <p class="text-xs text-slate-500 mt-6">Sistem Bagi Hasil Langsung - Bukan MLM.<br>&copy; NPA Smart System</p>
     </div>
 
-    <!-- Script Logika Mesin Generator -->
     <script>
         function generateLink() {
-            const nama = document.getElementById('inputNama').value.trim();
+            const namaInput = document.getElementById('inputNama').value.trim();
             const wa = document.getElementById('inputWa').value.trim();
             const resultArea = document.getElementById('resultArea');
             const outputLink = document.getElementById('outputLink');
+            const previewButton = document.getElementById('previewButton');
 
-            if(!nama || !wa) {
+            if(!namaInput || !wa) {
                 alert("Mohon isi Nama dan Nomor WhatsApp terlebih dahulu, Komandan!");
                 return;
             }
 
-            // Pastikan URL dasar ini sesuai dengan alamat web GitHub Ndan
+            // PEMBERSIH SPASI OTOMATIS (Misal "BUDI SANTOSO" jadi "BUDISANTOSO")
+            const namaBersih = namaInput.replace(/\s+/g, '');
+
             const baseUrl = "https://3ireborn.github.io/npa-funnel-magnet/promo.html";
-            
-            // Merakit URL baru
-            const linkJadi = `${baseUrl}?kupon=${nama}50&wa_mitra=${wa}`;
+            const linkJadi = `${baseUrl}?kupon=${namaBersih}50&wa_mitra=${wa}`;
             
             outputLink.value = linkJadi;
+            
+            // Masukkan link yang baru dibuat ke dalam tombol preview
+            previewButton.href = linkJadi;
+
             resultArea.classList.remove('hidden');
         }
 
         function copyLink() {
             const copyText = document.getElementById('outputLink');
             copyText.select();
-            copyText.setSelectionRange(0, 99999); // Untuk HP
+            copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
             alert("Link berhasil di-copy! Silakan paste di Facebook atau WA Anda.");
         }
