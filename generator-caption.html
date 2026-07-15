@@ -9,7 +9,6 @@
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
         .font-m { font-family: 'Montserrat', sans-serif; }
-        /* Animasi Loading Sederhana */
         .loader { border-top-color: #f59e0b; -webkit-animation: spinner 1.5s linear infinite; animation: spinner 1.5s linear infinite; }
         @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
@@ -18,28 +17,28 @@
 
     <div class="max-w-2xl w-full space-y-6">
         
-        <!-- HEADER -->
         <div class="text-center space-y-2 mb-8">
             <div class="inline-block bg-amber-500 text-slate-900 font-black px-3 py-1 rounded-full text-xs mb-2">BETA VERSION</div>
             <h1 class="text-3xl font-black text-white font-m uppercase tracking-widest">NPA <span class="text-amber-400">AI CAPTION</span></h1>
             <p class="text-sm text-slate-400">Upload Video & Biarkan AI Menulis Caption Viral (Format: H-M-S-C-T)</p>
         </div>
 
-        <!-- INPUT BOX -->
-        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl space-y-5 relative overflow-hidden">
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl space-y-5">
             
-            <!-- Simulasi Upload Video -->
-            <div class="border-2 border-dashed border-slate-600 rounded-xl p-8 text-center hover:border-amber-500 transition cursor-pointer" id="uploadBox">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-slate-400 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                </svg>
-                <p class="text-sm font-bold text-slate-300">Klik untuk Upload Video (.mp4)</p>
-                <p class="text-xs text-slate-500 mt-1">Atau paste transkrip video di bawah</p>
-                <!-- File Input (Hidden) -->
-                <input type="file" accept="video/mp4" class="hidden" id="fileInput">
+            <!-- Kotak Upload -->
+            <div onclick="document.getElementById('fileInput').click()" class="border-2 border-dashed border-slate-600 rounded-xl p-8 text-center hover:border-amber-500 transition cursor-pointer" id="uploadBox">
+                <div id="uploadContent">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-slate-400 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p class="text-sm font-bold text-slate-300">Klik untuk Upload Video (.mp4)</p>
+                    <p class="text-xs text-slate-500 mt-1">Atau paste transkrip video di bawah</p>
+                </div>
             </div>
+            
+            <!-- File Input (Sekarang aman di luar kotak) -->
+            <input type="file" accept="video/mp4" class="hidden" id="fileInput">
 
-            <!-- Alternatif Teks -->
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-widest mb-2">Transkrip / Ide Video (Opsional)</label>
                 <textarea id="ideVideo" rows="3" placeholder="Contoh: Video tentang pentingnya Istikmal Syariah untuk melindungi keluarga..." class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500 transition resize-none"></textarea>
@@ -50,23 +49,19 @@
             </button>
         </div>
 
-        <!-- LOADING STATE (Sembunyi) -->
         <div id="loadingBox" class="hidden flex flex-col items-center justify-center py-10 space-y-4">
             <div class="loader ease-linear rounded-full border-4 border-t-4 border-slate-700 h-12 w-12 mb-4"></div>
-            <p class="text-sm font-bold text-amber-400 animate-pulse">AI sedang mengekstrak suara & menyusun pola H-M-S-C-T...</p>
+            <p class="text-sm font-bold text-amber-400 animate-pulse text-center px-4">AI sedang mengekstrak suara & menyusun pola H-M-S-C-T...</p>
         </div>
 
-        <!-- HASIL CAPTION (Sembunyi) -->
-        <div id="hasilBox" class="hidden space-y-4 animate-fade-in-up transition-all duration-500">
+        <div id="hasilBox" class="hidden space-y-4">
             <div class="bg-slate-900 border border-emerald-500/50 rounded-xl p-5 shadow-lg">
                 <div class="flex items-center justify-between border-b border-slate-700 pb-3 mb-3">
                     <h2 class="text-md font-bold text-emerald-400 font-m uppercase">🎯 Hasil Generate AI</h2>
                     <span class="bg-emerald-900 text-emerald-300 text-[10px] px-2 py-1 rounded-md font-bold">100% Siap Posting</span>
                 </div>
-                
-                <textarea id="teksCaption" rows="12" class="w-full bg-transparent text-sm text-slate-200 focus:outline-none leading-relaxed resize-none" readonly></textarea>
+                <textarea id="teksCaption" rows="14" class="w-full bg-transparent text-sm text-slate-200 focus:outline-none leading-relaxed resize-none" readonly></textarea>
             </div>
-
             <button onclick="copyCaption()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition flex items-center justify-center gap-2 uppercase tracking-widest text-sm font-m">
                 📋 Salin Caption
             </button>
@@ -75,14 +70,9 @@
     </div>
 
     <script>
-        // Efek klik untuk kotak upload
-        document.getElementById('uploadBox').addEventListener('click', function() {
-            document.getElementById('fileInput').click();
-        });
-
         document.getElementById('fileInput').addEventListener('change', function() {
             if(this.files.length > 0) {
-                document.getElementById('uploadBox').innerHTML = `<p class="text-amber-400 font-bold">✅ ${this.files[0].name} terpilih!</p>`;
+                document.getElementById('uploadContent').innerHTML = `<p class="text-amber-400 font-bold text-center">✅ ${this.files[0].name}<br>Berhasil Dimasukkan!</p>`;
                 document.getElementById('uploadBox').classList.replace('border-slate-600', 'border-amber-500');
             }
         });
@@ -90,49 +80,42 @@
         function prosesAI() {
             const btn = document.getElementById('btnGenerate');
             const ide = document.getElementById('ideVideo').value.trim();
-            const file = document.getElementById('fileInput').files.length;
+            const fileInput = document.getElementById('fileInput');
 
-            if(!ide && file === 0) {
+            if(!ide && (!fileInput.files || fileInput.files.length === 0)) {
                 alert("Upload video atau ketik ide/transkripnya dulu, Ndan!");
                 return;
             }
 
-            // Sembunyikan hasil lama, tampilkan loading
             document.getElementById('hasilBox').classList.add('hidden');
             document.getElementById('loadingBox').classList.remove('hidden');
             btn.disabled = true;
             btn.classList.add('opacity-50', 'cursor-not-allowed');
 
-            // Simulasi proses API selama 3 detik
+            // Simulasi proses 3 detik
             setTimeout(() => {
                 const hasilCaption = `[HOOK]
 Keluarga sudah terlindungi, tapi apakah sudah bebas dari rasa was-was? 🤔
 
 [MASALAH]
-Banyak yang bingung menyiapkan masa depan keluarga. Pingin ngasih perlindungan yang aman, tapi takut melenceng dari prinsip agama. Ujung-ujungnya malah jadi beban pikiran.
+Banyak yang bingung menyiapkan masa depan keluarga. Pingin ngasih perlindungan yang aman, tapi takut salah langkah dan melenceng dari prinsip agama. Ujung-ujungnya malah jadi beban pikiran.
 
 [SOLUSI]
-Tenang, bangun rasa aman Anda dengan Istikmal Syariah! Solusi perlindungan yang dirancang 100% berdasarkan prinsip syariah. Langkah jadi lebih penuh tanggung jawab, tenang di hati, dan pastinya penuh keberkahan.
+Tenang, bangun rasa aman Anda dengan Istikmal Syariah! Ini bukan sekadar perlindungan, tapi solusi yang dirancang 100% berdasarkan prinsip syariah. Langkah jadi lebih penuh tanggung jawab, tenang di hati, dan pastinya penuh keberkahan.
 
 [CTA]
-Jangan tunda langkah baik ini! Mari pelajari Istikmal Syariah lebih lanjut. Klik link di bio/kolom komentar untuk info lengkapnya! 👇
+Jangan tunda lagi langkah baik ini! Mari pelajari Istikmal Syariah lebih lanjut sekarang. Cek kolom komentar atau klik link di bio untuk info lengkapnya! 👇
 
 [TAG]
 #IstikmalSyariah #PerlindunganKeluarga #Keberkahan #AsuransiSyariah #NPASmartSystem #3iReborn`;
 
                 document.getElementById('teksCaption').value = hasilCaption;
-                
-                // Matikan loading, tampilkan hasil
                 document.getElementById('loadingBox').classList.add('hidden');
                 document.getElementById('hasilBox').classList.remove('hidden');
                 
-                // Kembalikan tombol
                 btn.disabled = false;
                 btn.classList.remove('opacity-50', 'cursor-not-allowed');
-
-                // Scroll ke hasil
                 document.getElementById('hasilBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
             }, 3000);
         }
 
@@ -140,7 +123,7 @@ Jangan tunda langkah baik ini! Mari pelajari Istikmal Syariah lebih lanjut. Klik
             const textarea = document.getElementById('teksCaption');
             textarea.select();
             navigator.clipboard.writeText(textarea.value);
-            alert("Caption berhasil disalin! Tinggal paste di FB, IG, atau TikTok.");
+            alert("Caption berhasil disalin! Tinggal paste di media sosial Ndan.");
         }
     </script>
 </body>
