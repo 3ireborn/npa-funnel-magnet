@@ -9,20 +9,39 @@
     <style>body { font-family: 'Poppins', sans-serif; background: #050b14; color: #fff; }</style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
-    <div class="bg-slate-900 border border-amber-500/30 p-8 rounded-3xl shadow-2xl max-w-md w-full text-center">
+    <div class="bg-slate-900 border border-amber-500/30 p-8 rounded-3xl shadow-2xl max-w-md w-full text-center relative overflow-hidden">
+        <!-- Efek Glow -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
+
         <h1 class="text-2xl font-black text-amber-500 mb-2">LINK GENERATOR</h1>
         <p class="text-slate-400 text-sm mb-6">Pusat Komando NPA Smart System VVIP</p>
         
-        <input type="text" id="namaMitra" placeholder="Nama Anda (Tanpa Spasi, misal: MasIang)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mb-4 outline-none text-cyan-300">
+        <div class="text-left mb-4">
+            <label class="text-xs font-bold text-slate-500 uppercase ml-1">Nama Anda</label>
+            <input type="text" id="namaMitra" placeholder="Tanpa Spasi (Cth: MasIang)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mt-1 outline-none text-cyan-300 font-semibold focus:border-amber-500 transition-colors">
+        </div>
+
+        <div class="text-left mb-6">
+            <label class="text-xs font-bold text-slate-500 uppercase ml-1">Nomor WhatsApp</label>
+            <input type="number" id="waMitra" placeholder="Awali dgn 08... atau 628..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mt-1 outline-none text-cyan-300 font-semibold focus:border-amber-500 transition-colors">
+        </div>
         
-        <input type="number" id="waMitra" placeholder="No WA Anda (Contoh: 08123...)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mb-6 outline-none text-cyan-300">
+        <button onclick="buatLink()" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:scale-[1.02] shadow-[0_0_15px_rgba(217,119,6,0.3)] py-4 rounded-xl font-black text-lg transition-all mb-6">BUAT LINK SAYA 🚀</button>
         
-        <button onclick="buatLink()" class="w-full bg-amber-600 hover:bg-amber-500 py-3 rounded-xl font-bold transition-all mb-6">BUAT LINK SAYA 🚀</button>
-        
-        <div id="hasil" class="hidden">
-            <p class="text-xs text-slate-400 mb-2">Salin & Sebarkan Link Ini:</p>
-            <textarea id="linkAffiliate" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl p-3 text-xs text-amber-400 outline-none resize-none mb-2" rows="3" readonly></textarea>
-            <button onclick="copyLink()" class="bg-slate-800 text-white text-xs px-4 py-2 rounded-lg font-bold">SALIN LINK</button>
+        <div id="hasil" class="hidden border-t border-slate-800 pt-6">
+            <p class="text-xs font-bold text-emerald-400 mb-2 uppercase">✅ Link Siap Ditebar!</p>
+            <textarea id="linkAffiliate" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl p-3 text-xs text-amber-400 outline-none resize-none mb-3" rows="3" readonly></textarea>
+            
+            <!-- TOMBOL KEMBAR: SALIN & PREVIEW -->
+            <div class="flex gap-2">
+                <button onclick="copyLink()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white text-xs px-4 py-3 rounded-xl font-bold transition-all border border-slate-700">
+                    📋 SALIN LINK
+                </button>
+                <button onclick="previewLink()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-4 py-3 rounded-xl font-bold transition-all shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                    👁️ PREVIEW
+                </button>
+            </div>
+            <p class="text-[10px] text-slate-500 mt-3">*Klik Preview untuk memastikan link jalan normal.</p>
         </div>
     </div>
 
@@ -30,7 +49,11 @@
         function buatLink() {
             let nama = document.getElementById('namaMitra').value.trim();
             let wa = document.getElementById('waMitra').value.trim();
-            if(!nama || !wa) { alert("Isi Nama dan WA dulu ya!"); return; }
+            
+            if(!nama || !wa) { 
+                alert("Siap Salah! Isi Nama dan WA dulu ya, Komandan! 🫡"); 
+                return; 
+            }
             
             // Format link menuju Pusat Komando dengan membawa data affiliate
             let linkFinal = `https://3ireborn.github.io/npa-funnel-magnet/pusat-komando.html?ref=${encodeURIComponent(nama)}&wa=${encodeURIComponent(wa)}`;
@@ -42,7 +65,15 @@
         function copyLink() {
             let el = document.getElementById('linkAffiliate');
             el.select(); document.execCommand('copy');
-            alert("Link Affiliate Berhasil Disalin! 🫡");
+            alert("Berhasil disalin! Tinggal Paste di FB atau WA. 🚀");
+        }
+
+        // FUNGSI BARU: BUKA TAB PREVIEW
+        function previewLink() {
+            let linkFinal = document.getElementById('linkAffiliate').value;
+            if(linkFinal) {
+                window.open(linkFinal, '_blank');
+            }
         }
     </script>
 </body>
