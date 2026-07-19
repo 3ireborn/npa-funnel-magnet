@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Affiliate NPA VVIP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Poppins', sans-serif; background: #050b14; color: #fff; }</style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-slate-900 border border-amber-500/30 p-8 rounded-3xl shadow-2xl max-w-md w-full text-center">
+        <h1 class="text-2xl font-black text-amber-500 mb-2">LINK GENERATOR</h1>
+        <p class="text-slate-400 text-sm mb-6">Pusat Komando NPA Smart System VVIP</p>
+        
+        <input type="text" id="namaMitra" placeholder="Nama Anda (Tanpa Spasi, misal: MasIang)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mb-4 outline-none text-cyan-300">
+        
+        <input type="number" id="waMitra" placeholder="No WA Anda (Contoh: 08123...)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 mb-6 outline-none text-cyan-300">
+        
+        <button onclick="buatLink()" class="w-full bg-amber-600 hover:bg-amber-500 py-3 rounded-xl font-bold transition-all mb-6">BUAT LINK SAYA 🚀</button>
+        
+        <div id="hasil" class="hidden">
+            <p class="text-xs text-slate-400 mb-2">Salin & Sebarkan Link Ini:</p>
+            <textarea id="linkAffiliate" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl p-3 text-xs text-amber-400 outline-none resize-none mb-2" rows="3" readonly></textarea>
+            <button onclick="copyLink()" class="bg-slate-800 text-white text-xs px-4 py-2 rounded-lg font-bold">SALIN LINK</button>
+        </div>
+    </div>
+
+    <script>
+        function buatLink() {
+            let nama = document.getElementById('namaMitra').value.trim();
+            let wa = document.getElementById('waMitra').value.trim();
+            if(!nama || !wa) { alert("Isi Nama dan WA dulu ya!"); return; }
+            
+            // Format link menuju Pusat Komando dengan membawa data affiliate
+            let linkFinal = `https://3ireborn.github.io/npa-funnel-magnet/pusat-komando.html?ref=${encodeURIComponent(nama)}&wa=${encodeURIComponent(wa)}`;
+            
+            document.getElementById('linkAffiliate').value = linkFinal;
+            document.getElementById('hasil').classList.remove('hidden');
+        }
+
+        function copyLink() {
+            let el = document.getElementById('linkAffiliate');
+            el.select(); document.execCommand('copy');
+            alert("Link Affiliate Berhasil Disalin! 🫡");
+        }
+    </script>
+</body>
+</html>
