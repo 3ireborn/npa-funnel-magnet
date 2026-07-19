@@ -1,56 +1,135 @@
-<!--
-═══════════════════════════════════════════════════════════════
-🚀 NPA SMART SYSTEM: PUSAT KOMANDO 9 KOLAM
-Landing Page Utama untuk calon Member VVIP
-═══════════════════════════════════════════════════════════════
--->
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPA Smart System VVIP - Pusat Komando</title>
+    <title>Pusat Komando - NPA Smart System VVIP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Poppins', sans-serif; background: #050b14; color: #fff; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #050b14; color: #f8fafc; overflow-x: hidden; }
+        .gold-text { background: linear-gradient(135deg, #fde047 0%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #fde047 0%, #d97706 100%); }
+        .glow-gold { box-shadow: 0 0 30px rgba(217, 119, 6, 0.4); }
+    </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="relative bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] p-4 md:p-8">
+    
+    <!-- Background Glow -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-    <div class="max-w-3xl mx-auto">
-        <!-- HEADER -->
-        <div class="text-center mb-10">
-            <h1 class="text-3xl font-black text-amber-500 uppercase">Pusat Komando NPA VVIP</h1>
-            <p class="text-slate-400 mt-2">Pilih segmen Anda dan mulai transformasi finansial hari ini!</p>
+    <div class="max-w-3xl mx-auto relative z-10">
+        
+        <!-- WARNING HEADER -->
+        <div class="bg-red-900/40 border border-red-500/50 rounded-3xl p-6 md:p-8 text-center mb-8 shadow-[0_0_30px_rgba(239,68,68,0.15)]">
+            <h1 class="text-2xl md:text-4xl font-black text-red-500 leading-tight tracking-tight">
+                🚨 BONGKAR RAHASIA: KERJA CERDAS DARI RUMAH, TINGGALKAN CARA KUNO! 🚨
+            </h1>
         </div>
 
-        <!-- COPYWRITING PEMBUKA -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl mb-8 shadow-2xl leading-relaxed">
-            <h2 class="text-xl font-bold text-white mb-4">🚨 BONGKAR RAHASIA: KERJA CERDAS DARI RUMAH!</h2>
-            <p class="text-sm text-slate-300 mb-4">Anda masih pakai cara kuno? Upline cuma suruh "Semangat"? Saatnya pakai AI!</p>
-            <a href="https://3ireborn.github.io/npa-funnel-magnet/edukasi-fbpro.html" class="text-amber-500 font-bold underline">👉 Pelajari Mesin Uang Facebook Pro Di Sini</a>
+        <!-- PAIN POINTS SECTION -->
+        <div class="bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-3xl p-6 md:p-10 mb-8 shadow-2xl">
+            <p class="text-xl font-bold text-amber-400 mb-2">Halo Pejuang Jaringan!</p>
+            <p class="text-slate-300 mb-6 text-lg">Jujur-jujuran aja nih...<br>Apakah Anda masih sering ngalamin ini:</p>
+            
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-4 text-slate-200 text-lg"><i class="fa-solid fa-xmark text-red-500 mt-1.5 text-xl"></i> Tiap hari presentasi sampai berbusa, tapi ujungnya ditolak?</li>
+                <li class="flex items-start gap-4 text-slate-200 text-lg"><i class="fa-solid fa-xmark text-red-500 mt-1.5 text-xl"></i> Tim kena penyakit "Muntaber" (Mundur Tanpa Berita)?</li>
+                <li class="flex items-start gap-4 text-slate-200 text-lg"><i class="fa-solid fa-xmark text-red-500 mt-1.5 text-xl"></i> Bingung cari prospek baru karena list nama udah habis?</li>
+                <li class="flex items-start gap-4 text-slate-200 text-lg"><i class="fa-solid fa-xmark text-red-500 mt-1.5 text-xl"></i> Omset nyungsep tapi upline cuma bisa suruh "Semangat, semangat!" doang?</li>
+            </ul>
+
+            <div class="bg-red-950/40 border-l-4 border-red-500 p-5 rounded-r-xl mb-6">
+                <p class="text-red-300 font-medium text-lg">Kalau jawaban Anda <strong class="text-red-400 text-xl">"IYA"</strong>, berarti Anda masih pakai <strong class="text-red-400 text-xl">CARA KUNO!</strong> 😭</p>
+            </div>
+            
+            <p class="text-slate-300 mb-8 text-lg">Zaman udah AI, Bos! Ngapain masih kerja rodi kalau sistem bisa ngerjain 99% tugas Anda?</p>
+
+            <div class="text-center p-6 md:p-8 bg-blue-900/20 border border-blue-500/30 rounded-2xl">
+                <p class="text-white font-bold mb-6 text-lg">Mari saya tunjukkan bagaimana Facebook Pro bisa disulap jadi mesin pencetak uang otomatis!</p>
+                <a href="https://3ireborn.github.io/npa-funnel-magnet/edukasi-fbpro.html" class="inline-block w-full md:w-auto bg-blue-600 hover:bg-blue-500 text-white font-black py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] text-lg">
+                    👉 PELAJARI EDUKASI FB PRO DI SINI
+                </a>
+            </div>
         </div>
 
-        <!-- 9 TOMBOL KOLAM PROSPEK -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="polisi.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Polri & TNI <span>🛡️</span></a>
-            <a href="emak.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Emak-Emak <span>👩‍🍳</span></a>
-            <a href="karyawan.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Karyawan <span>💼</span></a>
-            <a href="tkw.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">TKW / TKI <span>✈️</span></a>
-            <a href="pedagang.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Pedagang <span>🏪</span></a>
-            <a href="pns.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">PNS <span>📝</span></a>
-            <a href="pengusaha.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Pengusaha <span>🚀</span></a>
-            <a href="mahasiswa.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Mahasiswa <span>🎓</span></a>
-            <a href="biaya-sekolah.html" class="p-4 bg-slate-800 hover:bg-amber-600 rounded-xl font-bold flex justify-between items-center transition">Biaya-Sekolah <span>📚</span></a>
+        <!-- THE SOLUTION & PRODUCT SECTION -->
+        <div class="bg-slate-900/90 backdrop-blur-md border border-amber-500/40 rounded-3xl p-6 md:p-10 mb-8 shadow-2xl relative overflow-hidden">
+            <!-- Deco -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-4 leading-tight">
+                🔥 PERKENALKAN: <br class="md:hidden"><span class="gold-text text-4xl md:text-5xl tracking-tight">NPA SMART SYSTEM VVIP</span> 🔥
+            </h2>
+            
+            <p class="text-center text-amber-400 font-bold mb-6 text-lg md:text-xl">Sistem Cerdas Bekerja 24 Jam, Anda Cukup Perkuat "Marketing Langit"!</p>
+            
+            <p class="text-slate-300 text-center mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
+                Ini bukan sekadar tools biasa. Ini adalah <strong>PABRIK SENJATA DIGITAL</strong> yang saya rakit khusus agar Anda bisa bekerja lebih cerdas, bukan sekadar kerja keras!
+            </p>
+
+            <div class="bg-amber-900/20 border border-amber-500/30 p-6 md:p-8 rounded-2xl mb-10">
+                <p class="text-white font-medium text-center leading-relaxed text-lg">
+                    Hanya dengan membeli 1 Produk NPA Smart System VVIP hari ini, Anda tidak hanya dapat sistemnya, tapi Anda akan saya siram dengan <br><span class="gold-text font-black text-2xl mt-2 block">7 BONUS TOOLS AI KELAS DEWA</span> <br>yang bakal bikin kompetitor Anda nangis di pojokan! 🎁
+                </p>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-6 text-center">APA SAJA GUDANG SENJATA YANG ANDA DAPATKAN? (KHUSUS VVIP):</h3>
+
+            <!-- BONUSES LIST -->
+            <div class="space-y-4 mb-10">
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 1: AI Banner Generator</strong><br><span class="text-slate-400">Bikin visual promosi keren sekelas desainer pro, cuma tinggal klik!</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 2: AI Video Masterpiece Builder</strong><br><span class="text-slate-400">Bikin video promosi otomatis lengkap dengan narasi, hook, dan call-to-action!</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 3: Radar Prospek</strong><br><span class="text-slate-400">Mesin pencari target market tertarget. Nggak ada cerita kehabisan database!</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 4: LP Builder Istikmal Syariah</strong><br><span class="text-slate-400">Punya Landing Page canggih sendiri dalam hitungan menit!</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 5: AI Schedule Creator</strong><br><span class="text-slate-400">Asisten pribadi yang ngatur jadwal posting dan kerja Anda!</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 6: Master Paket "NPA TOOLS"</strong><br><span class="text-slate-400">Berisi Generator Teknik Follow Up 139, Generator AI FB Content, & AI Tools Facebook.</span></div>
+                </div>
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg shrink-0 mt-0.5"><i class="fa-solid fa-check text-emerald-500 text-xl"></i></div>
+                    <div><strong class="text-amber-400 text-lg">BONUS 7: Support Eksklusif Grup WhatsApp VIP</strong><br><span class="text-slate-400">Bimbingan langsung, bongkar strategi, dan mentoring sampai mandiri!</span></div>
+                </div>
+            </div>
+
+            <div class="text-center bg-slate-950 p-6 md:p-8 rounded-2xl border border-slate-800">
+                <p class="text-slate-300 italic text-lg leading-relaxed">Coba Anda hitung sendiri...<br>Kalau Anda beli tools-tools canggih ini di luaran sana, berapa <strong class="text-white text-xl">PULUH JUTA</strong> yang harus Anda keluarkan setiap bulannya?</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto my-6 rounded-full"></div>
+                <p class="text-amber-400 font-bold text-xl leading-relaxed">Tapi di NPA Smart System VVIP, semua infrastruktur ini sudah kami siapkan<br><span class="text-2xl text-white font-black">HANYA UNTUK ANDA!</span></p>
+            </div>
         </div>
 
-        <!-- TOMBOL JOIN VVIP -->
-        <div class="mt-12 text-center border-t border-slate-800 pt-8">
-            <p class="font-bold text-amber-500 mb-4">Siap untuk semua bonus dan sistem NPA Smart System?</p>
-            <a href="https://3ireborn.github.io/8kolam-umum/penawaran-npa.html" class="block w-full bg-amber-600 py-4 rounded-xl font-black text-xl hover:scale-105 transition">JOIN VVIP SEKARANG!</a>
-            <p class="mt-6 italic text-slate-500 text-xs">"Keterbatasan itu cuma ada di pikiran! Waktunya buktikan!" - #DisabilitasPunyaKarya</p>
+        <!-- FINAL CALL TO ACTION SECTION -->
+        <div class="text-center mt-12 mb-20 relative z-20">
+            <h3 class="text-xl md:text-3xl font-black text-white mb-3">👇 AMBIL KEPUTUSAN SEKARANG, ATAU JADI PENONTON SELAMANYA! 👇</h3>
+            <p class="text-slate-400 text-lg mb-10">Tinggalkan cara kuno. Bergabunglah bersama ratusan pejuang lainnya di VVIP!</p>
+            
+            <!-- TOMBOL JOIN SAKTI -->
+            <a href="https://3ireborn.github.io/8kolam-umum/penawaran-npa.html" class="block w-full gold-bg text-slate-950 py-6 px-4 rounded-3xl font-black text-xl md:text-2xl hover:scale-[1.03] transition-transform duration-300 glow-gold uppercase tracking-tight">
+                👉 YA! SAYA MAU JOIN VVIP & AMBIL SEMUA BONUSNYA SEKARANG!
+            </a>
         </div>
+
     </div>
-        <!-- PASANG SCRIPT INI DI PALING BAWAH PUSAT-KOMANDO.HTML -->
+
+    <!-- TRACKING SCRIPT FOR AFFILIATE (VERY IMPORTANT) -->
     <script>
         // Cek apakah ada link dari affiliator (contoh: ?ref=MasIang&wa=08123)
         const urlParams = new URLSearchParams(window.location.search);
@@ -63,7 +142,5 @@ Landing Page Utama untuk calon Member VVIP
             localStorage.setItem('npa_aff_wa', refWa);
         }
     </script>
-    
 </body>
 </html>
-
