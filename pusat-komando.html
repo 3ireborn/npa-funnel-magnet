@@ -50,6 +50,20 @@ Landing Page Utama untuk calon Member VVIP
             <p class="mt-6 italic text-slate-500 text-xs">"Keterbatasan itu cuma ada di pikiran! Waktunya buktikan!" - #DisabilitasPunyaKarya</p>
         </div>
     </div>
+        <!-- PASANG SCRIPT INI DI PALING BAWAH PUSAT-KOMANDO.HTML -->
+    <script>
+        // Cek apakah ada link dari affiliator (contoh: ?ref=MasIang&wa=08123)
+        const urlParams = new URLSearchParams(window.location.search);
+        const refNama = urlParams.get('ref');
+        const refWa = urlParams.get('wa');
+        
+        // Jika ada, simpan ke memori HP prospek selamanya (sampai dia beli)
+        if (refNama && refWa) {
+            localStorage.setItem('npa_aff_nama', refNama);
+            localStorage.setItem('npa_aff_wa', refWa);
+        }
+    </script>
+    
 </body>
 </html>
 
